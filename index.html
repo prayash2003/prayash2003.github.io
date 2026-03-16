@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prayash Kaushik Dhital &mdash; Legal Researcher &amp; BA LLB</title>
+<meta name="description" content="Prayash Kaushik Dhital &mdash; BA LLB Candidate, Investigative Journalist, RTI/FOIA Researcher. Rajarshi Janak University, Nepal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080E17;--surf:#0F1923;--brd:#1A2A3A;--gold:#C8A96E;--glt:#E2C98A;--gdk:#9A7A45;--txt:#E8E0D5;--muted:#7A8590;--white:#F8F5F0;--ff-s:'Playfair Display',Georgia,serif;--ff-b:'Outfit',sans-serif;--ease:cubic-bezier(0.16,1,0.3,1);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--txt);font-family:var(--ff-b);font-weight:300;line-height:1.7;overflow-x:hidden;cursor:none;}
+a{color:inherit;text-decoration:none;}
+::selection{background:var(--gold);color:var(--bg);}
+#cursor{position:fixed;width:12px;height:12px;background:var(--gold);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s;mix-blend-mode:difference;}
+#cursor-ring{position:fixed;width:40px;height:40px;border:1px solid rgba(200,169,110,0.5);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .08s;}
+#loader{position:fixed;inset:0;background:var(--bg);z-index:10000;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity .6s,visibility .6s;}
+#loader.hide{opacity:0;visibility:hidden;}
+.ld-name{font-family:var(--ff-s);font-size:28px;font-weight:700;color:var(--gold);letter-spacing:.1em;opacity:0;animation:fd .6s .2s forwards;}
+.ld-bar{width:200px;height:1px;background:var(--brd);overflow:hidden;}
+.ld-bar-fill{height:100%;background:var(--gold);width:0;animation:lb 1.2s .3s var(--ease) forwards;}
+@keyframes fd{to{opacity:1;}}
+@keyframes lb{to{width:100%;}}
+body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:1;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:20px 56px;transition:background .4s,padding .4s,border-color .4s;border-bottom:1px solid transparent;}
+nav.scrolled{background:rgba(8,14,23,.96);backdrop-filter:blur(20px);padding:14px 56px;border-color:var(--brd);}
+.nav-logo{font-family:var(--ff-s);font-size:20px;font-weight:700;color:var(--gold);letter-spacing:.05em;}
+.nav-links{display:flex;gap:36px;}
+.nav-links a{font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);position:relative;transition:color .3s;}
+.nav-links a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(--gold);transition:width .3s var(--ease);}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+.nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.nav-toggle span{display:block;width:24px;height:1px;background:var(--txt);transition:all .3s var(--ease);}
+.nav-toggle.open span:nth-child(1){transform:rotate(45deg) translate(4px,4px);}
+.nav-toggle.open span:nth-child(2){opacity:0;}
+.nav-toggle.open span:nth-child(3){transform:rotate(-45deg) translate(4px,-4px);}
+.mob{position:fixed;inset:0;z-index:400;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s;}
+.mob.open{opacity:1;visibility:visible;}
+.mob a{font-family:var(--ff-s);font-size:40px;font-weight:700;color:var(--txt);transition:color .3s,opacity .4s,transform .4s;opacity:0;transform:translateY(20px);}
+.mob.open a{opacity:1;transform:translateY(0);}
+.mob.open a:nth-child(1){transition-delay:.1s;}.mob.open a:nth-child(2){transition-delay:.15s;}.mob.open a:nth-child(3){transition-delay:.2s;}.mob.open a:nth-child(4){transition-delay:.25s;}.mob.open a:nth-child(5){transition-delay:.3s;}.mob.open a:nth-child(6){transition-delay:.35s;}
+.mob a:hover{color:var(--gold);}
+#hero{min-height:100vh;display:grid;grid-template-columns:1.1fr 0.9fr;position:relative;overflow:hidden;}
+.hero-bg-lines{position:absolute;inset:0;pointer-events:none;z-index:0;background:linear-gradient(90deg,rgba(200,169,110,.03) 1px,transparent 1px),linear-gradient(0deg,rgba(200,169,110,.03) 1px,transparent 1px);background-size:80px 80px;}
+.hero-l{display:flex;flex-direction:column;justify-content:center;padding:140px 72px 80px;position:relative;z-index:2;}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px;opacity:0;animation:fu .8s .3s var(--ease) forwards;}
+.eyebrow-line{width:40px;height:1px;background:var(--gold);}
+.eyebrow-txt{font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+h1{font-family:var(--ff-s);font-size:clamp(56px,6.5vw,96px);font-weight:900;line-height:.95;color:var(--white);margin-bottom:28px;opacity:0;animation:fu .9s .45s var(--ease) forwards;}
+h1 .ac{color:var(--gold);font-style:italic;}
+.hdiv{width:60px;height:2px;background:var(--gold);margin-bottom:24px;opacity:0;animation:fu .8s .55s var(--ease) forwards;}
+.htagline{font-size:15px;font-weight:300;color:var(--muted);max-width:440px;line-height:1.8;margin-bottom:44px;opacity:0;animation:fu .8s .65s var(--ease) forwards;}
+.htagline strong{color:var(--txt);font-weight:500;}
+.pills{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:52px;opacity:0;animation:fu .8s .75s var(--ease) forwards;}
+.pill{font-size:10px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(200,169,110,.3);color:var(--gold);padding:7px 16px;border-radius:2px;transition:all .3s var(--ease);cursor:pointer;}
+.pill:hover{background:var(--gold);color:var(--bg);transform:translateY(-1px);}
+.hbtns{display:flex;gap:16px;align-items:center;opacity:0;animation:fu .8s .85s var(--ease) forwards;}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--ff-b);font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;padding:15px 36px;border:none;cursor:pointer;transition:all .3s var(--ease);position:relative;overflow:hidden;}
+.btn-g{background:var(--gold);color:var(--bg);}
+.btn-g::before{content:'';position:absolute;inset:0;background:var(--glt);transform:translateX(-101%);transition:transform .4s var(--ease);}
+.btn-g:hover::before{transform:translateX(0);}
+.btn-g span{position:relative;}
+.btn-o{background:transparent;color:var(--muted);border:1px solid var(--brd);}
+.btn-o:hover{color:var(--gold);border-color:var(--gold);}
+.hero-r{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;padding:140px 72px 80px 40px;}
+.stat-block{display:flex;flex-direction:column;border-left:1px solid var(--brd);padding-left:40px;opacity:0;animation:fu .9s .9s var(--ease) forwards;}
+.stat-item{padding:28px 0;border-bottom:1px solid var(--brd);}
+.stat-item:last-child{border-bottom:none;}
+.stat-num{font-family:var(--ff-s);font-size:56px;font-weight:900;color:var(--gold);line-height:1;margin-bottom:4px;display:flex;align-items:baseline;gap:4px;}
+.stat-sup{font-size:22px;color:var(--gdk);}
+.stat-lbl{font-size:11px;font-weight:400;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);}
+.scroll-cue{position:absolute;bottom:40px;left:72px;z-index:2;display:flex;align-items:center;gap:14px;color:var(--muted);font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:0;animation:fu .8s 1.1s var(--ease) forwards;}
+.sc-track{width:1px;height:48px;background:var(--brd);position:relative;overflow:hidden;}
+.sc-track::after{content:'';position:absolute;top:-100%;left:0;width:100%;height:100%;background:var(--gold);animation:sd 1.8s 1.2s infinite;}
+@keyframes sd{0%{top:-100%;}100%{top:200%;}}
+@keyframes fu{from{opacity:0;transform:translateY(32px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(36px);transition:opacity .8s var(--ease),transform .8s var(--ease);}
+.reveal.visible{opacity:1;transform:translateY(0);}
+section{position:relative;z-index:2;padding:120px 0;}
+.container{max-width:1140px;margin:0 auto;padding:0 56px;}
+.slbl{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.slbl-line{width:40px;height:1px;background:var(--gold);}
+.slbl-txt{font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);}
+h2{font-family:var(--ff-s);font-size:clamp(36px,4vw,60px);font-weight:700;line-height:1.1;color:var(--white);margin-bottom:64px;}
+h2 em{color:var(--gold);font-style:italic;}
+h3{font-family:var(--ff-s);font-size:26px;font-weight:700;color:var(--white);margin-bottom:8px;}
+#about{background:var(--surf);}
+.about-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:100px;align-items:start;}
+.about-text p{font-size:15px;font-weight:300;color:var(--muted);line-height:1.9;margin-bottom:22px;}
+.about-text p strong{color:var(--txt);font-weight:500;}
+.about-quote{margin:36px 0;padding:24px 0 24px 28px;border-left:3px solid var(--gold);font-family:var(--ff-s);font-size:20px;font-style:italic;color:var(--txt);line-height:1.5;}
+.irow{display:grid;grid-template-columns:110px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--brd);}
+.irow:last-child{border-bottom:none;}
+.ikey{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);padding-top:2px;}
+.ival{font-size:13px;font-weight:300;color:var(--txt);line-height:1.6;}
+.ival a{color:var(--txt);transition:color .3s;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px;}
+.ival a:hover{color:var(--gold);text-decoration-color:var(--gold);}
+#education{background:var(--bg);}
+.edu-feat{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--brd);overflow:hidden;transition:border-color .4s;}
+.edu-feat:hover{border-color:rgba(200,169,110,.4);}
+.edu-l{padding:56px 52px;background:linear-gradient(135deg,rgba(200,169,110,.07) 0%,transparent 60%);border-right:1px solid var(--brd);}
+.edu-badge{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);border:1px solid rgba(200,169,110,.3);padding:6px 14px;margin-bottom:28px;}
+.edu-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:.4;}}
+.edu-deg{font-family:var(--ff-s);font-size:36px;font-weight:700;color:var(--white);line-height:1.2;margin-bottom:12px;}
+.edu-sch{font-size:14px;font-weight:300;color:var(--muted);margin-bottom:32px;}
+.edu-gpa{display:inline-block;background:rgba(200,169,110,.12);border:1px solid rgba(200,169,110,.35);color:var(--gold);font-size:13px;font-weight:500;padding:8px 20px;letter-spacing:.06em;}
+.edu-r{padding:56px 52px;}
+.edu-dtitle{font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:28px;}
+.edu-drow{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid var(--brd);align-items:flex-start;}
+.edu-drow:last-child{border-bottom:none;}
+.edu-dicon{width:28px;height:28px;flex-shrink:0;background:rgba(200,169,110,.1);border:1px solid rgba(200,169,110,.2);display:flex;align-items:center;justify-content:center;font-size:12px;margin-top:1px;}
+.edu-dlbl{font-size:11px;font-weight:500;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px;}
+.edu-dval{font-size:13px;font-weight:300;color:var(--txt);}
+#experience{background:var(--surf);}
+.tl{display:flex;flex-direction:column;}
+.tl-item{display:grid;grid-template-columns:200px 1fr;border-bottom:1px solid var(--brd);transition:background .3s;}
+.tl-item:last-child{border-bottom:none;}
+.tl-item:hover{background:rgba(200,169,110,.03);}
+.tl-l{padding:48px 40px 48px 0;border-right:1px solid var(--brd);display:flex;flex-direction:column;gap:12px;}
+.tl-dot{width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(200,169,110,.15);margin-bottom:4px;}
+.tl-date{font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);line-height:1.4;}
+.tl-org{font-size:12px;font-weight:300;color:var(--muted);line-height:1.5;}
+.tl-r{padding:48px 0 48px 52px;}
+.tl-role{font-family:var(--ff-s);font-size:26px;font-weight:700;color:var(--white);margin-bottom:20px;line-height:1.3;}
+.tl-pts{display:flex;flex-direction:column;gap:10px;}
+.tl-pt{display:flex;gap:14px;align-items:flex-start;font-size:14px;font-weight:300;color:var(--muted);line-height:1.7;}
+.tl-bul{width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:9px;}
+.tl-pt strong{color:var(--txt);font-weight:500;}
+.tl-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px;}
+.tag{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:rgba(200,169,110,.08);border:1px solid rgba(200,169,110,.2);color:var(--gdk);padding:4px 10px;}
+#publications{background:var(--bg);}
+.pub-list{display:flex;flex-direction:column;}
+.pub-card{display:grid;grid-template-columns:80px 1fr 140px;gap:40px;align-items:start;padding:44px 0;border-bottom:1px solid var(--brd);text-decoration:none;color:inherit;transition:background .3s;position:relative;overflow:hidden;}
+.pub-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--gold);transition:width .4s var(--ease);}
+.pub-card:hover::before{width:2px;}
+.pub-card:hover .pub-title{color:var(--gold);}
+.pub-card:hover .pub-arr{transform:translate(4px,-4px);opacity:1;}
+.pub-num{font-family:var(--ff-s);font-size:52px;font-weight:900;color:rgba(200,169,110,.1);line-height:1;transition:color .3s;}
+.pub-card:hover .pub-num{color:rgba(200,169,110,.2);}
+.pub-outlet{font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;}
+.pub-title{font-family:var(--ff-s);font-size:22px;font-weight:700;color:var(--white);margin-bottom:6px;transition:color .4s var(--ease);line-height:1.35;}
+.pub-date{font-size:12px;font-weight:300;color:var(--muted);margin-bottom:14px;}
+.pub-desc{font-size:13px;font-weight:300;color:var(--muted);line-height:1.7;}
+.pub-r{display:flex;flex-direction:column;align-items:flex-end;gap:16px;}
+.pub-tag{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:1px solid rgba(200,169,110,.3);color:var(--gold);padding:6px 12px;white-space:nowrap;}
+.pub-arr{font-size:22px;color:var(--gold);opacity:0;transform:translate(0,0);transition:all .3s var(--ease);}
+.media-strip{margin-top:72px;padding-top:48px;border-top:1px solid var(--brd);}
+.ms-title{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:28px;display:flex;align-items:center;gap:12px;}
+.ms-title::before,.ms-title::after{content:'';flex:1;height:1px;background:var(--brd);}
+.media-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.mc{padding:24px;border:1px solid var(--brd);background:var(--surf);transition:all .3s;}
+.mc:hover{border-color:rgba(200,169,110,.4);transform:translateY(-3px);}
+.mc-name{font-family:var(--ff-s);font-size:18px;font-weight:700;color:var(--white);margin-bottom:6px;}
+.mc-desc{font-size:13px;font-weight:300;color:var(--muted);line-height:1.6;}
+.mc-sh{margin-top:14px;font-size:12px;color:var(--gold);display:flex;align-items:center;gap:6px;font-weight:500;}
+#skills{background:var(--surf);}
+.sk-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.sk-cat{margin-bottom:48px;}
+.sk-cat:last-child{margin-bottom:0;}
+.sk-cat-title{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--brd);}
+.sk-bars{display:flex;flex-direction:column;gap:14px;}
+.sk-bi{display:flex;flex-direction:column;gap:6px;}
+.sk-bh{display:flex;justify-content:space-between;}
+.sk-bn{font-size:13px;font-weight:400;color:var(--txt);}
+.sk-bp{font-size:11px;font-weight:500;color:var(--gold);}
+.sk-bt{height:3px;background:var(--brd);border-radius:2px;overflow:hidden;}
+.sk-bf{height:100%;background:linear-gradient(90deg,var(--gdk),var(--gold));border-radius:2px;width:0;transition:width 1.2s var(--ease);}
+.laws{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}
+.law{font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;background:rgba(200,169,110,.07);border:1px solid rgba(200,169,110,.2);color:var(--muted);padding:6px 12px;transition:all .3s;cursor:default;}
+.law:hover{background:rgba(200,169,110,.14);color:var(--gold);}
+#achievements{background:var(--bg);}
+.ach-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--brd);}
+.ach-card{padding:44px 36px;background:var(--bg);border-right:1px solid var(--brd);border-bottom:1px solid var(--brd);transition:background .3s;position:relative;overflow:hidden;}
+.ach-card:hover{background:rgba(200,169,110,.04);}
+.ach-card::before{content:'';position:absolute;top:0;left:0;right:0;height:0;background:var(--gold);transition:height .4s var(--ease);}
+.ach-card:hover::before{height:2px;}
+.ach-big{font-family:var(--ff-s);font-size:72px;font-weight:900;color:rgba(200,169,110,.12);line-height:1;position:absolute;top:16px;right:20px;transition:color .3s;}
+.ach-card:hover .ach-big{color:rgba(200,169,110,.2);}
+.ach-title{font-family:var(--ff-s);font-size:20px;font-weight:700;color:var(--white);margin-bottom:10px;line-height:1.3;position:relative;}
+.ach-desc{font-size:13px;font-weight:300;color:var(--muted);line-height:1.7;position:relative;}
+#documents{background:var(--surf);}
+.docs{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
+.doc{display:flex;align-items:center;gap:20px;padding:22px 24px;border:1px solid var(--brd);background:var(--bg);transition:all .3s;}
+.doc:hover{border-color:rgba(200,169,110,.4);transform:translateX(4px);}
+.doc-ico{width:44px;height:44px;flex-shrink:0;background:rgba(200,169,110,.1);border:1px solid rgba(200,169,110,.2);display:flex;align-items:center;justify-content:center;font-size:18px;}
+.doc-name{font-size:13px;font-weight:500;color:var(--txt);margin-bottom:3px;}
+.doc-ref{font-size:11px;font-weight:300;color:var(--muted);}
+#contact{background:linear-gradient(180deg,var(--bg) 0%,var(--surf) 100%);border-top:1px solid var(--brd);}
+.ct-layout{display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;}
+.ct-head{font-family:var(--ff-s);font-size:clamp(44px,5vw,80px);font-weight:900;line-height:1.0;color:var(--white);margin-bottom:24px;}
+.ct-head em{color:var(--gold);}
+.ct-sub{font-size:15px;font-weight:300;color:var(--muted);line-height:1.8;}
+.ct-links{display:flex;flex-direction:column;gap:12px;}
+.ct-link{display:flex;align-items:center;gap:20px;padding:22px 28px;border:1px solid var(--brd);background:rgba(15,25,35,.5);text-decoration:none;color:inherit;transition:all .35s var(--ease);position:relative;overflow:hidden;}
+.ct-link::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:rgba(200,169,110,.07);transition:width .4s var(--ease);}
+.ct-link:hover{border-color:rgba(200,169,110,.45);transform:translateX(6px);}
+.ct-link:hover::before{width:100%;}
+.ct-ico{width:44px;height:44px;flex-shrink:0;background:rgba(200,169,110,.1);border:1px solid rgba(200,169,110,.2);display:flex;align-items:center;justify-content:center;font-size:18px;transition:background .3s;position:relative;}
+.ct-link:hover .ct-ico{background:rgba(200,169,110,.2);}
+.ct-lbl{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:3px;}
+.ct-val{font-size:14px;font-weight:300;color:var(--txt);}
+.ct-arr{margin-left:auto;color:var(--gold);font-size:18px;opacity:0;transform:translateX(-8px);transition:all .3s var(--ease);position:relative;}
+.ct-link:hover .ct-arr{opacity:1;transform:translateX(0);}
+footer{background:var(--bg);border-top:1px solid var(--brd);padding:32px 56px;display:flex;justify-content:space-between;align-items:center;position:relative;z-index:2;}
+.f-logo{font-family:var(--ff-s);font-size:20px;font-weight:700;color:var(--gold);}
+.f-links{display:flex;gap:28px;}
+.f-links a{font-size:11px;font-weight:400;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);transition:color .3s;}
+.f-links a:hover{color:var(--gold);}
+.f-copy{font-size:12px;font-weight:300;color:var(--muted);}
+#btt{position:fixed;bottom:36px;right:36px;z-index:300;width:48px;height:48px;background:var(--gold);color:var(--bg);display:flex;align-items:center;justify-content:center;font-size:20px;cursor:pointer;opacity:0;transform:translateY(16px);transition:all .4s var(--ease);border:none;}
+#btt.show{opacity:1;transform:translateY(0);}
+#btt:hover{background:var(--glt);}
+@media(max-width:1024px){.stat-block{display:none;}#hero{grid-template-columns:1fr;}.hero-l{padding:130px 40px 80px;}}
+@media(max-width:768px){nav{padding:16px 24px;}.nav-links{display:none;}.nav-toggle{display:flex;}.hero-l{padding:120px 24px 80px;}.about-grid,.edu-feat,.sk-layout,.ct-layout{grid-template-columns:1fr;}.tl-item{grid-template-columns:1fr;border:none;}.tl-l{padding:32px 0 0;border-right:none;border-bottom:1px solid var(--brd);}.tl-r{padding:24px 0 32px;}.pub-card{grid-template-columns:52px 1fr;gap:20px;}.pub-r{display:none;}.ach-grid{grid-template-columns:1fr;}.docs{grid-template-columns:1fr;}.media-cards{grid-template-columns:1fr;}.container{padding:0 24px;}footer{flex-direction:column;gap:16px;text-align:center;padding:24px;}.f-links{flex-wrap:wrap;justify-content:center;}body{cursor:auto;}#cursor,#cursor-ring{display:none;}}
+</style>
+</head>
+<body>
+<div id="loader"><div class="ld-name">PKD</div><div class="ld-bar"><div class="ld-bar-fill"></div></div></div>
+<div id="cursor"></div><div id="cursor-ring"></div>
+<div class="mob" id="mob">
+  <a href="#about" onclick="closeMob()">About</a>
+  <a href="#education" onclick="closeMob()">Education</a>
+  <a href="#experience" onclick="closeMob()">Experience</a>
+  <a href="#publications" onclick="closeMob()">Publications</a>
+  <a href="#skills" onclick="closeMob()">Skills</a>
+  <a href="#contact" onclick="closeMob()">Contact</a>
+</div>
+<nav id="nav">
+  <a class="nav-logo" href="#hero">Prayash Kaushik Dhital</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="nav-toggle" id="nt" onclick="toggleMob()"><span></span><span></span><span></span></button>
+</nav>
+<section id="hero">
+  <div class="hero-bg-lines"></div>
+  <div class="hero-l">
+    <div class="eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-txt">BA LLB Candidate &middot; Rajarshi Janak University &middot; Nepal</span></div>
+    <h1>Prayash<br><span class="ac">Kaushik</span><br>Dhital</h1>
+    <div class="hdiv"></div>
+    <p class="htagline"><strong>Legal Researcher. Investigative Journalist. Student Rights Activist.</strong><br>Filing FOIA requests to the Pentagon. Taking universities to the CIAA. Published in national media &mdash; all while completing a law degree.</p>
+    <div class="pills">
+      <span class="pill">RTI / FOIA</span>
+      <span class="pill">Criminal Law</span>
+      <span class="pill">Civil Law</span>
+      <span class="pill">Legal Drafting</span>
+      <span class="pill">Clinical Practice A+</span>
+      <span class="pill">Constitutional Law</span>
+      <span class="pill">Investigative Journalism</span>
+    </div>
+    <div class="hbtns">
+      <a href="#contact" class="btn btn-g"><span>Get In Touch</span></a>
+      <a href="#experience" class="btn btn-o">View Work &rarr;</a>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="stat-block" id="sb">
+      <div class="stat-item"><div class="stat-num"><span class="counter" data-t="7">0</span><span class="stat-sup">/10</span></div><div class="stat-lbl">Semesters Completed</div></div>
+      <div class="stat-item"><div class="stat-num"><span class="counter" data-t="40">0</span><span class="stat-sup">+</span></div><div class="stat-lbl">Subjects Cleared</div></div>
+      <div class="stat-item"><div class="stat-num"><span class="counter" data-t="3">0</span></div><div class="stat-lbl">Published Investigations</div></div>
+      <div class="stat-item"><div class="stat-num"><span class="counter" data-t="5">0</span><span class="stat-sup">+</span></div><div class="stat-lbl">Govt Bodies Investigated</div></div>
+    </div>
+  </div>
+  <div class="scroll-cue"><div class="sc-track"></div><span>Scroll</span></div>
+</section>
+<section id="about">
+  <div class="container">
+    <div class="slbl reveal"><span class="slbl-line"></span><span class="slbl-txt">Who I Am</span></div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h2>A lawyer who doesn't<br>wait to <em>practise law.</em></h2>
+        <p>I am a BA LLB candidate at Rajarshi Janak University, Janakpurdham (Batch 2022), achieving a <strong>First Division CGPA of 3.00&thinsp;/&thinsp;4.00</strong>. But what defines me is not a grade &mdash; it is action taken before graduation.</p>
+        <blockquote class="about-quote">"The courtroom is not just a room in a building. It is everywhere accountability is demanded."</blockquote>
+        <p>While still a student, I filed <strong>Freedom of Information Act (FOIA) requests to the US Air Force and US Indo-Pacific Command (INDOPACOM)</strong> and received official correspondence from their military headquarters in Hawaii &mdash; making me likely the first Nepali law student to do so.</p>
+        <p>I filed an official <strong>CIAA complaint</strong> against my own university for violations of Bar Council Rules, covered by three national newspapers. I submitted memoranda to the <strong>Prime Minister's Office</strong> and published 3-part investigative journalism in national media.</p>
+        <p>I believe a lawyer's duty begins not at the Bar &mdash; but the moment injustice can be challenged.</p>
+      </div>
+      <div class="reveal" style="transition-delay:.2s">
+        <div class="irow"><span class="ikey">Full Name</span><span class="ival">Prayash Kaushik Dhital</span></div>
+        <div class="irow"><span class="ikey">Born</span><span class="ival">23 December 2003</span></div>
+        <div class="irow"><span class="ikey">Location</span><span class="ival">Kamane-8, Hetauda, Makwanpur, Nepal</span></div>
+        <div class="irow"><span class="ikey">Email</span><span class="ival"><a href="mailto:prayashkaushik@gmail.com">prayashkaushik@gmail.com</a></span></div>
+        <div class="irow"><span class="ikey">Phone</span><span class="ival"><a href="tel:+9779840038769">+977-9840038769</a></span></div>
+        <div class="irow"><span class="ikey">Languages</span><span class="ival">Nepali (Native) &middot; English (Professional) &middot; Hindi (Conversational)</span></div>
+        <div class="irow"><span class="ikey">University</span><span class="ival">Rajarshi Janak University &mdash; Humanities &amp; Law</span></div>
+        <div class="irow"><span class="ikey">CGPA</span><span class="ival">3.00 / 4.00 &mdash; First Division</span></div>
+        <div class="irow"><span class="ikey">Reg. No.</span><span class="ival">1-3-2-015-2022</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="education">
+  <div class="container">
+    <div class="slbl reveal"><span class="slbl-line"></span><span class="slbl-txt">Academic Background</span></div>
+    <h2 class="reveal">Education</h2>
+    <div class="edu-feat reveal">
+      <div class="edu-l">
+        <div class="edu-badge"><span class="edu-dot"></span>Currently Enrolled</div>
+        <div class="edu-deg">Bachelor of Arts<br>and Laws (BA LLB)</div>
+        <div class="edu-sch">Rajarshi Janak University &mdash; University Campus, Janakpurdham<br>Faculty of Humanities and Law &middot; Batch 2022</div>
+        <div class="edu-gpa">CGPA 3.00 / 4.00 &mdash; First Division</div>
+      </div>
+      <div class="edu-r">
+        <div class="edu-dtitle">Programme Details</div>
+        <div class="edu-drow"><div class="edu-dicon">&#128197;</div><div><div class="edu-dlbl">Duration</div><div class="edu-dval">2022 &ndash; Present &middot; Semester 8 of 10 (ongoing)</div></div></div>
+        <div class="edu-drow"><div class="edu-dicon">&#127942;</div><div><div class="edu-dlbl">Best Semester</div><div class="edu-dval">Semester 3 &mdash; SGPA 3.35 &middot; Consistent First Division throughout</div></div></div>
+        <div class="edu-drow"><div class="edu-dicon">&#9878;&#65039;</div><div><div class="edu-dlbl">Specialisation</div><div class="edu-dval">Criminal Law, Civil Law, Constitutional Law, Evidence Law, Clinical Practice</div></div></div>
+        <div class="edu-drow"><div class="edu-dicon">&#127919;</div><div><div class="edu-dlbl">Clinical Practice</div><div class="edu-dval">A grades in all Clinical Practice subjects &mdash; Legal Drafting, Criminal Trial Advocacy, Civil Case Drafting</div></div></div>
+        <div class="edu-drow"><div class="edu-dicon">&#128203;</div><div><div class="edu-dlbl">Registration</div><div class="edu-dval">No. 1-3-2-015-2022</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="experience">
+  <div class="container">
+    <div class="slbl reveal"><span class="slbl-line"></span><span class="slbl-txt">Professional Work</span></div>
+    <h2 class="reveal">Experience</h2>
+    <div class="tl">
+      <div class="tl-item reveal">
+        <div class="tl-l"><div class="tl-dot"></div><div class="tl-date">Nov 2025 &ndash; Present</div><div class="tl-org">Independent<br>National Media</div></div>
+        <div class="tl-r">
+          <div class="tl-role">Investigative Journalist &amp; RTI/FOIA Researcher</div>
+          <div class="tl-pts">
+            <div class="tl-pt"><div class="tl-bul"></div><div>Authored a <strong>3-part investigative series</strong> on the US military C-17 Globemaster landing at Tribhuvan International Airport (9 Nov 2025), examining Nepal's national sovereignty and non-alignment policy</div></div>
+            <div class="tl-pt"><div class="tl-bul"></div><div>Filed <strong>RTI requests</strong> under Nepal's Soochanako Hak Ain 2064 to the Ministry of Foreign Affairs, Ministry of Defence, Ministry of Home Affairs, and CAAN</div></div>
+            <div class="tl-pt"><div class="tl-bul"></div><div>Filed <strong>FOIA requests to the US Air Force</strong> &mdash; received official response Case No. 2026-01711-F (16 December 2025)</div></div>
+            <div class="tl-pt"><div class="tl-bul"></div><div>Received official correspondence from <strong>US Indo-Pacific Command (INDOPACOM), Camp HM Smith, Hawaii</strong> &mdash; Case No. 2026-F-022 (17 February 2026), confirming mission under INDOPACOM control</div></div>
+            <div class="tl-pt"><div class="tl-bul"></div><div>Applied <strong>Chicago Convention 1944, Vienna Convention 1961</strong>, and Nepal Civil Aviation Act 2015 &mdash; published with 7 official government document appendices</div></div>
+          </div>
+          <div class="tl-tags"><span class="tag">FOIA</span><span class="tag">RTI</span><span class="tag">Investigative Journalism</span><span class="tag">International Law</span><span class="tag">Published</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-l"><div class="tl-dot"></div><div class="tl-date">Aug &ndash; Sep 2024</div><div class="tl-org">Akhil (Samajwadi)<br>Rajarshi Janak Univ.</div></div>
+        <div class="tl-r">
+          <div class="tl-role">Student Rights Activist &amp; CIAA Complainant</div>
+          <div class="tl-pts">
+            <div class="tl-pt"><div class="tl-bul"></div><div>Filed official <strong>complaint to Nepal's CIAA</strong> against Rajarshi Janak University for granting BA LLB affiliation to 15 private colleges in violation of Bar Council Rules 2077, Rule 17</div></div>
+            <div class="tl-pt"><div class="tl-bul"></div><div>Submitted memoranda to <strong>Prime Minister's Office</strong> (Singha Durbar), Chief Minister of Madhesh Province, Ministry of Education, University Grants Commission, and Nepal Bar Council</div></div>
+            <div class="tl-pt"><div class="tl-bul"></div><div>Case covered by <strong>Annapurna Post</strong> (467 shares), <strong>Ratopati</strong> (1,200+ shares), and Janapatrika &mdash; named directly as the complainant</div></div>
+            <div class="tl-pt"><div class="tl-bul"></div><div>Cited: CIAA Act 2048 Sections 4 &amp; 8, Bar Council Rules 2077 Rule 17 Sub-rules 1, 3, 4, 5</div></div>
+          </div>
+          <div class="tl-tags"><span class="tag">CIAA Complaint</span><span class="tag">Bar Council Rules</span><span class="tag">National Media</span><span class="tag">Public Interest</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-l"><div class="tl-dot"></div><div class="tl-date">Shrawan 2081 BS<br>/ 2024</div><div class="tl-org">Akhil (Samajwadi)<br>RJU Campus</div></div>
+        <div class="tl-r">
+          <div class="tl-role">Student Union President Candidate (Sabhapati)</div>
+          <div class="tl-pts">
+            <div class="tl-pt"><div class="tl-bul"></div><div>Contested as <strong>Sabhapati (President) candidate</strong> in University Campus Student Union election under Akhil (Samajwadi) banner</div></div>
+            <div class="tl-pt"><div class="tl-bul"></div><div>Described as <strong>&lsquo;Jehendar Vidyarthi&rsquo;</strong> (talented student) by Janapatrika national newspaper &mdash; led the progressive student bloc at RJU campus</div></div>
+            <div class="tl-pt"><div class="tl-bul"></div><div>Platform: academic rights, legal education standards, progressive student welfare</div></div>
+          </div>
+          <div class="tl-tags"><span class="tag">Student Leadership</span><span class="tag">Academic Rights</span><span class="tag">Janapatrika Featured</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="publications">
+  <div class="container">
+    <div class="slbl reveal"><span class="slbl-line"></span><span class="slbl-txt">Written Work</span></div>
+    <h2 class="reveal">Publications</h2>
+    <div class="pub-list">
+      <a class="pub-card reveal" href="https://hanktoday.com" target="_blank" rel="noopener">
+        <div class="pub-num">01</div>
+        <div><div class="pub-outlet">Hank Today</div><div class="pub-title">&#2453;&#2508;&#2463;&#2472;&#2496;&#2468;&#2495;&#2453; &#2438;&#2476;&#2544;&#2467;&#2478;&#2494; &#2531;&#2478;&#2503;&#2544;&#2495;&#2453;&#2496; &#2488;&#2503;&#2472;&#2494;&#2453;&#2507; &lsquo;&#2487;&#2472;&#2509;&#2465;&#2507;&ndash;&#2474;&#2509;&#2479;&#2494;&#2488;&#2495;&#2475;&#2495;&#2453;&rsquo; &#2437;&#2474;&#2544;&#2503;&#2488;&#2472; &mdash; &#2477;&#2494;&#2455; &#2509;</div><div class="pub-date">9 March 2026</div><div class="pub-desc">Analysis of INDOPACOM Case 2026-F-022 confirming Nepal C-17 landing as active US military operation. Exposed Nepal government claims as contradicted by Pentagon&rsquo;s own official documents.</div></div>
+        <div class="pub-r"><span class="pub-tag">Investigative</span><div class="pub-arr">&#8599;</div></div>
+      </a>
+      <a class="pub-card reveal" href="https://hanktoday.com" target="_blank" rel="noopener">
+        <div class="pub-num">02</div>
+        <div><div class="pub-outlet">Hank Today</div><div class="pub-title">&#2447;&#2453;&#2463;&#2376; &#2488;&#2544;&#2453;&#2494;&#2544;, &#2470;&#2497;&#2439;&#2469;&#2544;&#2496; &#2460;&#2476;&#2494;&#2475; &mdash; &#2477;&#2494;&#2455; &#2528;</div><div class="pub-date">21 February 2026</div><div class="pub-desc">Exposed contradiction between Nepal Foreign Ministry and Home Ministry RTI responses regarding 18 US military personnel in Kathmandu. Argued violations of RTI Act Section 32.</div></div>
+        <div class="pub-r"><span class="pub-tag">RTI / Law</span><div class="pub-arr">&#8599;</div></div>
+      </a>
+      <a class="pub-card reveal" href="https://hanktoday.com" target="_blank" rel="noopener">
+        <div class="pub-num">03</div>
+        <div><div class="pub-outlet">Hank Today</div><div class="pub-title">&#2438;&#2453;&#2494;&#2577;&#2453;&#2507; &#2437;&#2468;&#2495;&#2453;&#2509;&#2480;&#2478;&#2467; &#2544; &#2488;&#2494;&#2544;&#2509;&#2476;&#2477;&#2508;&#2478;&#2495;&#2453;&#2468;&#2494;&#2453;&#2507; &#2488;&#2509;&#2445;&#2482;&#2472; &mdash; &#2477;&#2494;&#2455; &#2529;</div><div class="pub-date">20 February 2026</div><div class="pub-desc">Original investigative piece on US Air Force C-17 Globemaster landing at TIA. Published with 7 official government document appendices. Argued violation of Chicago Convention, Vienna Convention, and Nepal Civil Aviation Act 2015.</div></div>
+        <div class="pub-r"><span class="pub-tag">Sovereignty</span><div class="pub-arr">&#8599;</div></div>
+      </a>
+    </div>
+    <div class="media-strip reveal">
+      <div class="ms-title">Media Coverage</div>
+      <div class="media-cards">
+        <div class="mc"><div class="mc-name">Annapurna Post</div><div class="mc-desc">Nepal&rsquo;s leading national daily &mdash; named directly as CIAA complainant holding the government accountable.</div><div class="mc-sh">&#128293; 467 social shares</div></div>
+        <div class="mc"><div class="mc-name">Ratopati Online</div><div class="mc-desc">Nepal&rsquo;s No.1 news portal (1.7M Facebook followers) &mdash; featured in RJU affiliation dispute.</div><div class="mc-sh">&#128293; 1,200+ social shares</div></div>
+        <div class="mc"><div class="mc-name">Janapatrika</div><div class="mc-desc">Named as Student Union President candidate and described as <em>&lsquo;Jehendar Vidyarthi&rsquo;</em> (talented student).</div><div class="mc-sh">&#128517; Named &amp; Featured</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="skills">
+  <div class="container">
+    <div class="slbl reveal"><span class="slbl-line"></span><span class="slbl-txt">Competencies</span></div>
+    <h2 class="reveal">Skills</h2>
+    <div class="sk-layout">
+      <div>
+        <div class="sk-cat reveal">
+          <div class="sk-cat-title">Legal Practice</div>
+          <div class="sk-bars">
+            <div class="sk-bi"><div class="sk-bh"><span class="sk-bn">Legal Research &amp; RTI/FOIA</span><span class="sk-bp">95%</span></div><div class="sk-bt"><div class="sk-bf" data-w="95"></div></div></div>
+            <div class="sk-bi"><div class="sk-bh"><span class="sk-bn">Legal Drafting</span><span class="sk-bp">92%</span></div><div class="sk-bt"><div class="sk-bf" data-w="92"></div></div></div>
+            <div class="sk-bi"><div class="sk-bh"><span class="sk-bn">Clinical Practice (Court)</span><span class="sk-bp">90%</span></div><div class="sk-bt"><div class="sk-bf" data-w="90"></div></div></div>
+            <div class="sk-bi"><div class="sk-bh"><span class="sk-bn">Investigative Journalism</span><span class="sk-bp">88%</span></div><div class="sk-bt"><div class="sk-bf" data-w="88"></div></div></div>
+            <div class="sk-bi"><div class="sk-bh"><span class="sk-bn">Treaty &amp; International Law</span><span class="sk-bp">80%</span></div><div class="sk-bt"><div class="sk-bf" data-w="80"></div></div></div>
+          </div>
+        </div>
+        <div class="sk-cat reveal">
+          <div class="sk-cat-title">Languages</div>
+          <div class="sk-bars">
+            <div class="sk-bi"><div class="sk-bh"><span class="sk-bn">Nepali (Native)</span><span class="sk-bp">100%</span></div><div class="sk-bt"><div class="sk-bf" data-w="100"></div></div></div>
+            <div class="sk-bi"><div class="sk-bh"><span class="sk-bn">English (Professional)</span><span class="sk-bp">85%</span></div><div class="sk-bt"><div class="sk-bf" data-w="85"></div></div></div>
+            <div class="sk-bi"><div class="sk-bh"><span class="sk-bn">Hindi (Conversational)</span><span class="sk-bp">70%</span></div><div class="sk-bt"><div class="sk-bf" data-w="70"></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="sk-cat reveal" style="transition-delay:.2s">
+          <div class="sk-cat-title">Laws Applied</div>
+          <div class="laws">
+            <span class="law">Nepal RTI Act 2064</span><span class="law">CIAA Act 2048</span><span class="law">Bar Council Rules 2077</span><span class="law">Chicago Convention 1944</span><span class="law">Vienna Convention 1961</span><span class="law">US FOIA</span><span class="law">Civil Aviation Act 2015</span><span class="law">Nepal Constitution 2072</span><span class="law">Criminal Procedure Code</span><span class="law">Evidence Act</span><span class="law">Contract Act</span><span class="law">Muluki Civil Code</span>
+          </div>
+        </div>
+        <div class="sk-cat reveal" style="transition-delay:.3s">
+          <div class="sk-cat-title">Other Competencies</div>
+          <div class="sk-bars">
+            <div class="sk-bi"><div class="sk-bh"><span class="sk-bn">Document &amp; Evidence Analysis</span><span class="sk-bp">95%</span></div><div class="sk-bt"><div class="sk-bf" data-w="95"></div></div></div>
+            <div class="sk-bi"><div class="sk-bh"><span class="sk-bn">Public Advocacy</span><span class="sk-bp">88%</span></div><div class="sk-bt"><div class="sk-bf" data-w="88"></div></div></div>
+            <div class="sk-bi"><div class="sk-bh"><span class="sk-bn">Memorandum Drafting</span><span class="sk-bp">90%</span></div><div class="sk-bt"><div class="sk-bf" data-w="90"></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="achievements">
+  <div class="container">
+    <div class="slbl reveal"><span class="slbl-line"></span><span class="slbl-txt">Milestones</span></div>
+    <h2 class="reveal">Notable <em>Achievements</em></h2>
+    <div class="ach-grid reveal">
+      <div class="ach-card"><div class="ach-big">01</div><div class="ach-title">First Nepali Law Student &mdash; INDOPACOM</div><div class="ach-desc">Likely the first Nepali law student to receive official correspondence from US Indo-Pacific Command (INDOPACOM), Hawaii, via FOIA &mdash; Case No. 2026-F-022.</div></div>
+      <div class="ach-card"><div class="ach-big">02</div><div class="ach-title">3-Part Investigative Series</div><div class="ach-desc">Published series on US military operations in Nepal, citing official documents from 5 government bodies across 2 countries, with 7 official appendices.</div></div>
+      <div class="ach-card"><div class="ach-big">03</div><div class="ach-title">Landmark CIAA Complaint</div><div class="ach-desc">Filed complaint covered by 3 national newspapers (1,600+ combined shares), protecting students&rsquo; Bar Council exam eligibility.</div></div>
+      <div class="ach-card"><div class="ach-big">04</div><div class="ach-title">Named by Annapurna Post</div><div class="ach-desc">Directly named by Nepal&rsquo;s leading national daily as a BA LLB student holding the government legally accountable &mdash; 467 social shares.</div></div>
+      <div class="ach-card"><div class="ach-big">05</div><div class="ach-title">First Division &mdash; 40 Subjects</div><div class="ach-desc">Maintained CGPA 3.00 First Division while simultaneously conducting legal research, investigative journalism, and national student advocacy.</div></div>
+      <div class="ach-card"><div class="ach-big">06</div><div class="ach-title">A Grades &mdash; All Clinical Practice</div><div class="ach-desc">Consistent A-grade performance across every Clinical Practice subject &mdash; Legal Drafting, Criminal Trial Advocacy, Civil Case Drafting.</div></div>
+    </div>
+  </div>
+</section>
+<section id="documents">
+  <div class="container">
+    <div class="slbl reveal"><span class="slbl-line"></span><span class="slbl-txt">Verification</span></div>
+    <h2 class="reveal">Official <em>Documents</em></h2>
+    <div class="docs reveal">
+      <div class="doc"><div class="doc-ico">&#127482;&#127480;</div><div><div class="doc-name">US Air Force FOIA Response</div><div class="doc-ref">Case No. 2026-01711-F &middot; 16 December 2025</div></div></div>
+      <div class="doc"><div class="doc-ico">&#127758;</div><div><div class="doc-name">INDOPACOM Official Letter</div><div class="doc-ref">Case No. 2026-F-022 &middot; Camp HM Smith, Hawaii &middot; 17 Feb 2026</div></div></div>
+      <div class="doc"><div class="doc-ico">&#9878;&#65039;</div><div><div class="doc-name">CIAA Complaint</div><div class="doc-ref">Commission for Investigation of Abuse of Authority &middot; 2081/05/27</div></div></div>
+      <div class="doc"><div class="doc-ico">&#128203;</div><div><div class="doc-name">Ministry of Foreign Affairs RTI</div><div class="doc-ref">Registration No. 12-17629376</div></div></div>
+      <div class="doc"><div class="doc-ico">&#128737;&#65039;</div><div><div class="doc-name">Ministry of Defence RTI Response</div><div class="doc-ref">Ch.No. 1108 &middot; 2082/08/09</div></div></div>
+      <div class="doc"><div class="doc-ico">&#9992;&#65039;</div><div><div class="doc-name">Nepal CAAN RTI Response</div><div class="doc-ref">Letter No. 1261 &middot; 2082/08/28</div></div></div>
+      <div class="doc"><div class="doc-ico">&#127891;</div><div><div class="doc-name">Academic Transcripts Semesters 1&ndash;7</div><div class="doc-ref">Rajarshi Janak University &middot; All verified</div></div></div>
+      <div class="doc"><div class="doc-ico">&#128240;</div><div><div class="doc-name">National Media Coverage</div><div class="doc-ref">Annapurna Post &middot; Ratopati &middot; Janapatrika</div></div></div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="container">
+    <div class="ct-layout">
+      <div class="reveal">
+        <div class="slbl" style="margin-bottom:24px"><span class="slbl-line"></span><span class="slbl-txt">Get In Touch</span></div>
+        <h2 class="ct-head">Let&rsquo;s<br><em>connect.</em></h2>
+        <p class="ct-sub">Whether you are looking for a dedicated legal researcher, a collaborator on investigative work, or simply want to discuss law &mdash; I would be glad to hear from you.</p>
+      </div>
+      <div class="ct-links reveal" style="transition-delay:.2s">
+        <a class="ct-link" href="mailto:prayashkaushik@gmail.com"><div class="ct-ico">&#9993;&#65039;</div><div><div class="ct-lbl">Email</div><div class="ct-val">prayashkaushik@gmail.com</div></div><div class="ct-arr">&#8599;</div></a>
+        <a class="ct-link" href="tel:+9779840038769"><div class="ct-ico">&#128222;</div><div><div class="ct-lbl">Phone</div><div class="ct-val">+977-9840038769</div></div><div class="ct-arr">&#8599;</div></a>
+        <a class="ct-link" href="https://maps.google.com/?q=Hetauda,Makwanpur,Nepal" target="_blank" rel="noopener"><div class="ct-ico">&#128205;</div><div><div class="ct-lbl">Location</div><div class="ct-val">Kamane-8, Hetauda, Makwanpur, Nepal</div></div><div class="ct-arr">&#8599;</div></a>
+        <a class="ct-link" href="mailto:prayashkaushik@gmail.com?subject=Collaboration Inquiry"><div class="ct-ico">&#129309;</div><div><div class="ct-lbl">Collaborate</div><div class="ct-val">Legal research &middot; Journalism &middot; Advocacy</div></div><div class="ct-arr">&#8599;</div></a>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="f-logo">PKD</div>
+  <div class="f-links"><a href="#about">About</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#publications">Publications</a><a href="#contact">Contact</a></div>
+  <div class="f-copy">&copy; 2026 Prayash Kaushik Dhital &middot; Rajarshi Janak University &middot; Nepal</div>
+</footer>
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">&#8593;</button>
+<script>
+window.addEventListener('load',()=>{setTimeout(()=>{document.getElementById('loader').classList.add('hide');},1400);});
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let rx=0,ry=0,cx=0,cy=0;
+document.addEventListener('mousemove',e=>{cx=e.clientX;cy=e.clientY;cur.style.left=cx+'px';cur.style.top=cy+'px';});
+(function animR(){rx+=(cx-rx)*.1;ry+=(cy-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animR);})();
+document.querySelectorAll('a,button,.pill').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='20px';cur.style.height='20px';ring.style.width='64px';ring.style.height='64px';});
+  el.addEventListener('mouseleave',()=>{cur.style.width='12px';cur.style.height='12px';ring.style.width='40px';ring.style.height='40px';});
+});
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',window.scrollY>60);
+  document.getElementById('btt').classList.toggle('show',window.scrollY>400);
+  const secs=document.querySelectorAll('section[id]');
+  const lks=document.querySelectorAll('.nav-links a');
+  let c='';
+  secs.forEach(s=>{if(window.scrollY>=s.offsetTop-120)c=s.id;});
+  lks.forEach(a=>{a.classList.toggle('active',a.getAttribute('href')==='#'+c);});
+});
+function toggleMob(){const t=document.getElementById('nt'),m=document.getElementById('mob');t.classList.toggle('open');m.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
+function closeMob(){document.getElementById('nt').classList.remove('open');document.getElementById('mob').classList.remove('open');document.body.style.overflow='';}
+const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible');});},{threshold:.08,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+const bo=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.querySelectorAll('.sk-bf').forEach(b=>{b.style.width=b.dataset.w+'%';});});},{threshold:.3});
+document.querySelectorAll('.sk-cat').forEach(el=>bo.observe(el));
+const co=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.querySelectorAll('.counter').forEach(c=>{const t=+c.dataset.t;let n=0;const s=t/40;const ti=setInterval(()=>{n+=s;if(n>=t){n=t;clearInterval(ti);}c.textContent=Math.floor(n);},40);});co.unobserve(x.target);}});},{threshold:.5});
+document.querySelectorAll('#sb').forEach(el=>co.observe(el));
+</script>
+</body>
+</html>
